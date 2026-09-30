@@ -1,0 +1,19 @@
+{
+  "name": "RCC Leganés — 2026 Annual Program",
+  "short_name": "RCC Leganés",
+  "description": "ICC Leganés Annual Program Plan for 2026 — Our Year of Exceeding Reward.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f8fafc",
+  "theme_color": "#4f46e5",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "./icons/Rccg_logo.png",
+      "sizes": "1280x1280",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
