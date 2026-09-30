@@ -3151,6 +3151,15 @@
       let deferredPrompt = null;
       const installedAppStorageKey = "rcc-leganes-installed-app";
 
+      function captureInstallPrompt(event) {
+        if (hasInstalledApp()) return;
+        event.preventDefault();
+        deferredPrompt = event;
+        showInstallBanner();
+      }
+
+      window.addEventListener("beforeinstallprompt", captureInstallPrompt);
+
       function hasInstalledApp() {
         return (
           isStandalone() ||
@@ -3196,13 +3205,6 @@
             console.error("Service Worker registration failed:", error);
           }
         }
-
-        window.addEventListener("beforeinstallprompt", (event) => {
-          if (hasInstalledApp()) return;
-          event.preventDefault();
-          deferredPrompt = event;
-          showInstallBanner();
-        });
 
         window.addEventListener("appinstalled", () => {
           deferredPrompt = null;
